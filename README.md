@@ -180,111 +180,119 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 <h2>Performing Activities on the Network</h2>
 <br>
 
-<h3>&#9315; Download Wireshark </h3>
-<img width="694" alt="7" src="https://github.com/user-attachments/assets/85c62eb3-f601-4c3a-b230-b5da00ea9152"> 
+<h3>Download Wireshark </h3>
 
-- We are going to download Wireshark on this virtual machine, here is the link https://www.wireshark.org
+![image](https://github.com/user-attachments/assets/1dc4d169-5fbb-4fcb-aecd-ef42a1f9e948)
 
-- We will be downloading Windowsx64 Installer, so click this
+- Download Wireshark on this virtual machine, here is the link https://www.wireshark.org
 
+- Download Windowsx64 Installer.
 - When it is done downloading open the file and go through the procedure for installing the software which we will mostly say yes and agree
 
-- Wireshark is a protocol analyzer which lets us do traffic examination and observe traffic between the 2 virtual machines. Let’s us view traffic that's coming from and going to the Windows virtual machine  
+- Wireshark is a protocol analyzer that lets us do traffic examination and observe traffic between the 2 virtual machines.
+<be>
+
+![image](https://github.com/user-attachments/assets/d0da1325-9e9d-4063-80ec-26d3ade876be)
 
 <br><br>
 
-<img width="1149" alt="8" src="https://github.com/user-attachments/assets/56c55bbb-48a4-4ab5-b554-5b4e3c7af88d">
+- Open Wireshark. Click and highlight "Ethernet" and Click on the blue sharkfin on the top left.
 
-- Once this is opened click on Ethernet and then the blue sharkfin button at the top left under File
+<br>
 
+
+![image](https://github.com/user-attachments/assets/c2c99b94-5ca7-472a-8386-823b103f4611)
 <br><br>
 
-- This will show up after you do that, to increase the size to look better at the data hold control while pressing ➕
+- This is how the screen will look. To zoom in, click on the magnifier with the + on it.
   
 - This is all the network traffic that is happening on the back end of the computer
    
-<img width="1152" alt="9" src="https://github.com/user-attachments/assets/1d0a32c8-98b3-4b39-a8c1-9491fbefa172">
-
 
 <br><br>
-<h3>&#9316; Filter for ICMP Traffic </h3>
+<h3>Filter for ICMP Traffic </h3>
 
 - The next thing we will do is filter for ICMP traffic, first type ICMP in the search bar this will show only ICMP or ping traffic
 
 - This traffic is what ping uses, the ping command is what we use to test connectivity between 2 devices
-<img width="615" alt="10" src="https://github.com/user-attachments/assets/c8758d7b-da2b-4943-9f82-680ac53e42d0">
 
 
 
+![image](https://github.com/user-attachments/assets/c68120e5-d864-4ac6-af3b-553b7f4cdcb2)
 <br><br>
 
-- My private IP address for Linux right now is 10.0.0.5
+-The Linux VM Private IP address is 10.0.0.5
   
-<img width="509" alt="11 (A)" src="https://github.com/user-attachments/assets/0776060c-b0ab-4157-97bf-06a71e51233e">
-
-<h3>&#9317; Launch Windows Powershell </h3>
-
-<img width="1156" alt="11" src="https://github.com/user-attachments/assets/316ed6a1-c837-47a2-8e0d-4f158a79575a">
+![image](https://github.com/user-attachments/assets/fe671af4-d031-4f11-8ce3-ba41dbe7cc8e)
 
 
-- Launch Windows Powershell
+<h3>Launch Windows Powershell </h3>
 
-- Type ping in the Windows Powershell application, then type the private IP address of the Linux Virtual Machine next to ping as you see in the picture mine is 10.0.0.5
+![image](https://github.com/user-attachments/assets/3986c37a-4341-489f-b259-c3cc00a4ed7a)
+
+![image](https://github.com/user-attachments/assets/b446b4a4-2ac9-4242-950d-b44a9eb972d9)
+
+
+
+- Type ping in the Windows Powershell application, then type the private IP address of the Linux Virtual Machine 10.0.0.5.
 
 - We will attempt to ping this IP address from the Windows Virtual Machine
 
-- The feedback we will get from The Linux VM is reply, reply, reply, reply, and in the pink will be a bunch of traffic
+- The feedback we will get from The Linux VM is reply, reply, reply, reply in the Powershell and traffic Wireshark.
 
-- Once you type in ICMP that should stop all the other spam and let you see the pings that happened
 
 <br><br>
 
-<img width="1026" alt="12" src="https://github.com/user-attachments/assets/c94862ab-57f5-4ac4-b78e-d88357b26127">
+![image](https://github.com/user-attachments/assets/7b974787-db50-4a52-b556-331d3509fd57)
 
-- Press the green shark fin under Edit in Wireshark called "Restart Current Capture" then press continue without saving to clear what’s in pink
 
-- Redo ping again in Powershell, you may see just 4 events happen in there for example reply, reply, reply but in Wireshark, you see a couple of events happen because it captured both the request from the Windows computer A.K.A source 10.0.0.4 and captured the reply from the Destination A.K.A 10.0.0.5 Linux computer with a request from the Windows computer and reply from the Linux Computer back and forth 
+- Press the green shark fin under Edit in Wireshark called "Restart Current Capture" then press continue without saving.
+
+- Redo ping again in Powershell, you may see just 4 events happen in there for example reply, reply, reply but in Wireshark you see 8 events. That is because it captured both the request from the Windows computer, source - 10.0.0.4, and captured the reply from the Destination - 10.0.0.5, Linux computer, another request from the Windows computer and reply from the Linux Computer.
 
 
 <br><br>
 
 <img width="1363" alt="Screenshot 2024-10-27 at 4 51 10 PM" src="https://github.com/user-attachments/assets/26c5add5-c7f5-44fe-abe4-8ccae110cf34">
 
+- Click on a traffic.
 
-- On the left side beneath the data in pink click on the grey Ethernet II tab down arrow and what you see highlighted starting with Source: refers to the Physical address in Powershell
+- On the left side beneath the data, Expand Ethernet II tab and you see the Source and Destination MAC Address. It refers to the Physical address in Powershell
+
+- It is a layer 2 addressing in the OSI Model
   
 - In Windows Powershell type ipconfig /all and hit enter
-  
+
+![image](https://github.com/user-attachments/assets/6ae85533-ec3d-4c46-9f56-6f0897b3a865)
+<br><br>
+
 - The Physical Address highlighted is also the Source for the MAC address of the Windows VM and back to Wireshark the data above Source: is the Linux computer destination MAC address that we pinged
   
 <br><br>
 
-- When you expand the Internet Protocol A.K.A representative of the network layer of the OSI model layer 3 you can see the source address and destination address
-
-<img width="1021" alt="Screenshot 2024-10-27 at 4 57 10 PM" src="https://github.com/user-attachments/assets/5666db96-fd42-425c-8338-2b6c38dfd401">
-
-<br><br>
+- When you expand the Internet Protocol, this is representative of the network layer of the OSI model layer 3 you can see the source address and destination address
 
 - The Windows virtual machine source address 10.0.0.4 is the private IP address that would be the IPv4 highlighted in the Windows Power shell with 10.0.0.5 in Wireshark being the Linux VM's Private IP address
 
-  <br><br>
+![image](https://github.com/user-attachments/assets/98b52a5c-57aa-4101-8646-5409680a279d)
 
-<img width="301" alt="Screenshot 2024-10-27 at 4 57 49 PM" src="https://github.com/user-attachments/assets/9e9222a1-5b9e-49ef-9a74-a81c8eabd693">
+<br><br>
+
+<br>
+
+![image](https://github.com/user-attachments/assets/dfe9b716-6772-47d5-a71f-37ea0c83d6ce)
+<br><br>
 
 - When you expand the Internet Control Message Protocol (ICMP) you can see data the actual payload of the data that was sent in the ping
 
 <br><br>
 
-<img width="1036" alt="13" src="https://github.com/user-attachments/assets/363639c4-1b52-4f03-8a8f-69bd4383c586">
+- What you see here is the ICMP Echo request so it is from the Windows computer. The next packet is the Echo reply from the Linux computer
 
-- What you see here is the ICMP Echo request so it is from the Windows computer and under that is the Echo reply from the Linux computer
-
-- The data in here will essentially be reversed the source and destination possibly being flipped and the IP address source becomes the Linux computer and the destination becomes the Windows computer and this keeps going on throughout all the pings
-
-- Next, we will do a perpetual Ping put in Windows Powershell Ping the IP address of the Linux computer 10.0.0.5 and then -t example (ping 10.0.0.5 -t) this will make the data ping forever while Wireshark captures them as well in the background
+- The data in here will essentially be reversed the source and destination possibly being flipped and the IP address source becomes the destination and this keeps going on throughout all the pings
 
 <br><br>
-<h3>&#9318; Configuring a firewall to Block all incoming ping traffic </h3>
+<h3>Configuring a firewall to Block all incoming ping traffic </h3>
 
 - In this step, we are going to block all incoming ping traffic coming from the Windows Virtual Machine to the Linux Virtual Machine and then observe what happens afterward
 
