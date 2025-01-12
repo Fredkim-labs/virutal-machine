@@ -456,7 +456,7 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 - The connection will die after you hit enter
 
-- Ipconfig \release happened but then automatically ipconfig \renew kicked in and restored the connection
+- Ipconfig /release happened but then automatically ipconfig /renew kicked in and restored the connection
 
 - This is the DHCP traffic that was captured in Wireshark
 
@@ -476,43 +476,37 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 <h3>Observe DNS traffic </h3>
 
-<img width="1120" alt="31" src="https://github.com/user-attachments/assets/08659088-37f5-4340-a534-b810ef861dd2">
+![image](https://github.com/user-attachments/assets/8134e65b-61fe-4c66-a7ff-2cab879fb921)
 
-- First, we are going to filter out DNS traffic
+- First, filter out DNS traffic
   
-- Type in the filter dns hit enter
+- Type in the filter dns and hit enter
 
-- There will be a lot of DNS activity to make our own hit the green sharkfin at the top to restart this capture then press continue without saving to start fresh
+- There will be a lot of DNS activity. To make our own DNS, click on the green sharkfin at the top to restart this capture then press continue without saving to start fresh
 <br><br>
 
-<img width="600" alt="33" src="https://github.com/user-attachments/assets/0a348b78-6e73-4f50-b24e-b0e17dd1b30b">
+![image](https://github.com/user-attachments/assets/f415d3f0-f34a-4d80-9466-df9b04062d81)
 
-- we are going to look for the IP address of disney.com
+- Look for the IP address of disney.com
 
-- In PowerShell type in nslookup disney.com and hit enter
+- In PowerShell type in nslookup than disney.com and hit enter
 
-- Once the computer reaches out to the DNS server the DNS server will find out and then tell us the IP address with a bunch of traffic following up behind
-
+- Once the computer reaches out to the DNS server, the DNS server will find out and then tell us the IP address with a bunch of traffic following up behind
 
 - Disney.com resolves to the IP address 130.211.198.204
 
-<br><br>
-
-<img width="1143" alt="32" src="https://github.com/user-attachments/assets/16281162-e100-407f-8ff9-2d1d4ede39e3">
-
-
 - This is spam that happened on the back end of the nslookup for Disney
 
-- DNS (resolves host names like human-readable names into IP addresses)
+- The DNS resolves human-readable hostnames into IP addresses.
 
 <br><br>
 
 
-<img width="1002" alt="Screenshot 2024-10-27 at 5 54 22 PM" src="https://github.com/user-attachments/assets/a71ce1cc-3ab0-48b8-871a-b090c94a1d46">
+![image](https://github.com/user-attachments/assets/fec9b0ea-c4fd-4c7b-88be-d8bdbe94d227)
 
 
 
-- If you copy and paste the address 130.211.198.204 in a browser it will show something in correlation to Disney sometimes
+- If you copy and paste the address 130.211.198.204 in a browser it will show something in correlation to Disney.
 
 - Sometimes you can load a modern website based on the IP address
 
@@ -521,17 +515,17 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 
 
-<img width="1149" alt="34" src="https://github.com/user-attachments/assets/f8452888-503c-4793-8ef9-cb49428530c2">
+![image](https://github.com/user-attachments/assets/2e6d3dbf-48d3-46b7-a356-d2dd6d78c7d3)
 
-- DNS uses TCP and UDP port 53
+- DNS uses both TCP and UDP port 53
 
-- In Wireshark type in udp.port==53 and you will still see all the DNS traffic the double equal sign means or
+- In Wireshark type in udp.port==53||tcp.port==53 and you will still see all the DNS traffic
 
 - DNS uses TCP in between DNS servers when they are sharing information, but when your computer looks up DNS records it uses UDP 
 
 <br><br>
 
-<h3>&#9322; Observe RDP traffic </h3>
+<h3>Observe RDP traffic </h3>
 
 <img width="599" alt="35" src="https://github.com/user-attachments/assets/7d7c7176-6bc4-46e3-8901-64485e385795">
 
