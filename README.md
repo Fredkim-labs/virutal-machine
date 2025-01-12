@@ -4,11 +4,11 @@
 <h1> Creating Virtual Networks and Virtual Machines </h1>
 
 
-This tutorial provides a comprehensive guide starting with the creation of resource groups for virtual machines, which will be utilized throughout the lab. We’ll then explore remote desktop access specifically from a macOS perspective. Finally, we’ll dive into performing various network-related tasks using the virtual machines, giving you hands-on experience in managing and configuring network activities.
+This tutorial provides a comprehensive guide to creating resource groups for virtual machines. We will be using Azure Virtual Machine and Windows Remote Desktop. Finally, we’ll perform various network-related tasks using the virtual machines, giving you hands-on experience managing and configuring network activities.
 
 <h2>Technologies Used</h2>
 
-- Microsoft Azure (Virtual Machines/Compute)
+- Microsoft Azure (Virtual Machines)
 - Remote Desktop
 - PowerShell
 
@@ -17,7 +17,6 @@ This tutorial provides a comprehensive guide starting with the creation of resou
 - Windows Server 2022
 - Windows 10 Pro (22H2)
 - Linux, Ubuntu Server 24.04 LTS - x64 Gen 2. 
-- MacOS 
 
 <h2>Creating Our Resources & Virtual Machines </h2> 
 <br>
@@ -29,9 +28,9 @@ This tutorial provides a comprehensive guide starting with the creation of resou
   
 - Go to https://portal.azure.com/#home to get started
   
-- Once your there click on/ search Resource Groups and afterward click on create
+- Once you are there click on/ search Resource Groups and afterward click on create
   
-- For me I named mine RG-LAB-02 as this was my second lab and for the region since i'm located in the Eastcoast East US 2 worked out for me and the other labs
+- I named mine RG-LAB-02 as this was my second lab and for the region since I'm located in the Eastcoast East US 2 worked out for me and the other labs
   <br><br>
 
 <h3>&#9313; Create The Virtual Machine With The Virtual Network</h3>
