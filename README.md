@@ -268,8 +268,9 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 - The Physical Address highlighted is also the Source for the MAC address of the Windows VM and back to Wireshark the data above Source: is the Linux computer destination MAC address that we pinged
   
-<br><br>
-![image](https://github.com/user-attachments/assets/dfe9b716-6772-47d5-a71f-37ea0c83d6ce)
+<br><be>
+![image](https://github.com/user-attachments/assets/98b52a5c-57aa-4101-8646-5409680a279d)
+
 <br><br>
 
 - When you expand the Internet Protocol, this is representative of the network layer of the OSI model layer 3 you can see the source address and destination address
@@ -277,18 +278,17 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 - The Windows virtual machine source address 10.0.0.4 is the private IP address that would be the IPv4 highlighted in the Windows Power shell with 10.0.0.5 in Wireshark being the Linux VM's Private IP address
 
 
-<be>
+<br>
 
-![image](https://github.com/user-attachments/assets/98b52a5c-57aa-4101-8646-5409680a279d)
+![image](https://github.com/user-attachments/assets/dfe9b716-6772-47d5-a71f-37ea0c83d6ce)
 <br><br>
 
 - When you expand the Internet Control Message Protocol (ICMP) you can see data the actual payload of the data that was sent in the ping
 
-<br><br>
-
-- What you see here is the ICMP Echo request so it is from the Windows computer. The next packet is the Echo reply from the Linux computer
+- What you see here is the ICMP Echo request from the Windows computer. The next packet is the Echo reply from the Linux computer
 
 - The data in here will essentially be reversed the source and destination possibly being flipped and the IP address source becomes the destination and this keeps going on throughout all the pings
+
 
 <br><br>
 <h3>Configuring a firewall to Block all incoming ping traffic </h3>
