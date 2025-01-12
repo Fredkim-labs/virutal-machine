@@ -269,14 +269,13 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 - The Physical Address highlighted is also the Source for the MAC address of the Windows VM and back to Wireshark the data above Source: is the Linux computer destination MAC address that we pinged
   
 <br><br>
+![image](https://github.com/user-attachments/assets/98b52a5c-57aa-4101-8646-5409680a279d)
+<be><br>
 
 - When you expand the Internet Protocol, this is representative of the network layer of the OSI model layer 3 you can see the source address and destination address
 
 - The Windows virtual machine source address 10.0.0.4 is the private IP address that would be the IPv4 highlighted in the Windows Power shell with 10.0.0.5 in Wireshark being the Linux VM's Private IP address
 
-![image](https://github.com/user-attachments/assets/98b52a5c-57aa-4101-8646-5409680a279d)
-
-<br><br>
 
 <br>
 
