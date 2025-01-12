@@ -527,21 +527,17 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 <h3>Observe RDP traffic </h3>
 
-<img width="599" alt="35" src="https://github.com/user-attachments/assets/7d7c7176-6bc4-46e3-8901-64485e385795">
+![image](https://github.com/user-attachments/assets/a53970a6-da98-4a68-a990-d71fd83a6010)
 
-- RDP (is used when remotely connecting from 1 computer to another to gain a remote desktop  GUI, the computer being connected is typically "listening" for a connection on TCP port 3389
+- RDP is used when remotely connecting from 1 computer to another to gain remote access, the computer being connected is typically "listening" for a connection on TCP port 3389
+
+- When filtering for tcp.port==3389, there is a lot of spam because RDP is constantly streaming a picture from the server to our local machine; constantly sending stuff
+
+- Compared to SSH which only sends traffic when the user is doing a single keystroke, it sends the keystroke to the server you are connected to but RDP has to send an actual photograph
 
 - This remote desktop that we are using is an RDP connection
 
-<br><br>
-
-<img width="1034" alt="Screenshot 2024-11-07 at 2 31 36 PM" src="https://github.com/user-attachments/assets/bccfaf7c-3987-468e-9ab3-ad3835c48bbe">
-
-- When filtering for tcp.port==3389 as you see there is a lot of spam because RDP is constantly streaming a picture from the server to our local machine; constantly sending stuff
-
-- Compared to SSH which only sends traffic when your doing a single keystroke, it sends the keystroke to the server your connected too but RDP has to send an actual photograph
-
-<h2> Congrats on Finishing the Tutorial! 🎉 </h2>
+<h2> Congrats on Finishing the Guide</h2>
 
 
-You’ve successfully navigated the process of creating resource groups, setting up virtual machines, and gaining remote desktop access from macOS. By following this tutorial, you’ve gained valuable hands-on experience in managing virtual networks and configuring network tasks. Well done on completing these essential steps—your newly acquired skills are a fantastic addition to your tech toolkit, and I’m confident they’ll serve you well in your future projects. Keep up the great work and continue exploring the endless possibilities of virtual network management!
+You’ve successfully navigated the process of creating resource groups, setting up virtual machines, and gaining remote desktop access. By following this Guide, you’ve gained valuable hands-on experience in managing virtual networks and configuring network tasks.
