@@ -21,57 +21,79 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 <h2>Creating Our Resources & Virtual Machines </h2> 
 <br>
 
-<h3>&#9312; Create The Resource Group</h3>
+<h3>Create The Resource Group</h3>
 
-  <img width="386" alt="1" src="https://github.com/user-attachments/assets/59fd6633-f347-40e5-aeb2-0b1b92fd5acc">
-  <br>
+![image](https://github.com/user-attachments/assets/5feed575-279e-4c40-b8be-2be160231aea)
+<br>
   
 - Go to https://portal.azure.com/#home to get started
   
-- Once you are there click on/ search Resource Groups and afterward click on create
+- Search or find Resource Groups and click on create
   
-- I named mine RG-LAB-02 as this was my second lab and for the region since I'm located in the Eastcoast East US 2 worked out for me and the other labs
+- I used RG-Network for my Resource Group. For the region, I selected East US 2, as I am located on the East Coast.
   <br><br>
 
-<h3>&#9313; Create The Virtual Machine With The Virtual Network</h3>
+<h3>Create The Virtual Machine With The Virtual Network</h3>
 
 
 - Here is the created resource group
   
-<img width="1183" alt="2" src="https://github.com/user-attachments/assets/1ab43f3c-0c42-4dee-abcc-f9c058182d35">
+![image](https://github.com/user-attachments/assets/da868e7e-1873-496c-8a13-7af77673b6f5)
  <br><br>
 
-<img width="696" alt="3" src="https://github.com/user-attachments/assets/b4123cb6-7c80-48eb-9b97-4bbca3f431f6">
-<br>
+![image](https://github.com/user-attachments/assets/1264f732-91e1-4394-ade8-8025a60f3583)
+<br><br>
 
 - Search for Virtual Machines and hit create 
 
-- Select your resource group, for the virtual machine name I just made it VM1
+- Select your resource group(RG-Network), for the virtual machine name I named it Windows-VM
   
-- Selected my region, for availability options set that to "No infrastructure redundancy required", Security type standard, and finally image Windows 10 Pro, version 22H2 x64 Gen2
+- Set Region to East US2.
 
-<img width="625" alt="Screenshot 2024-10-27 at 3 05 26 PM" src="https://github.com/user-attachments/assets/d26c907f-1e8c-4a5d-bea9-7c255eb8bd0b">
+- Set image to Windows 10 Pro, version 22H2 x64 Gen2
 
+![image](https://github.com/user-attachments/assets/dcafaaf2-dccb-4d32-8e5d-d7b22dccbc8a)
+<br><br>
   
-- Make sure for the size you choose at least 2 vcpus so that way it is not going to run slow in Azure
+- Select Size - You want at least 2 vcpus or the Virtual Machine will run slow in Azure
 
-- Compose a password and username that are both easily remembered and secure, and then record them down for safekeeping.
+- Create a password and username and then record them down for safekeeping.
+
   
 <br><br>
-<img width="1327" alt="Screenshot 2024-07-03 at 5 19 18 PM" src="https://github.com/user-attachments/assets/aefafcab-5794-46d7-b4ae-5fa96c7ad878">
 
+![image](https://github.com/user-attachments/assets/c4c69167-a218-4fe6-9646-a666a149c435)
+<br><br>
+- Click on the box to confirm licensing.
 
-<br>
+<br><br>
 
-- Regarding the networking tab, my virtual network name was automatically assigned this name. To change the name scheme, please click on “Create New.”
-  
-<br>
-  <img width="678" alt="Screenshot 2024-10-27 at 4 05 38 PM" src="https://github.com/user-attachments/assets/f5f5191b-ded8-4f50-a585-9e12873e3a41">
+![image](https://github.com/user-attachments/assets/a91c4d10-f950-4d09-a0ef-cec6f0f9b1d1)
 
+<br><br>
 
-- I have updated the name to Lab2-Vnet. Please confirm by pressing OK, and this will be the new name for the virtual network.
+- Under the "Networking" tab, my virtual network name was automatically assigned. To create a new one, click on “Create New.”
   
 <br><br>
+
+![image](https://github.com/user-attachments/assets/43188b88-b3e6-4e58-933d-12bd8b8afdbf)
+
+<br><br>
+
+- I have named it to Lab-Vnet. Please confirm by pressing OK, and this will be the new name for the virtual network.
+  
+<br><br>
+
+![image](https://github.com/user-attachments/assets/46191026-8d56-4d13-9d2a-c7a73dd8e8cd)
+
+<br><br>
+
+![image](https://github.com/user-attachments/assets/4c6c7cdd-1f38-4701-9c8f-fa10515484b6)
+<br><br>
+
+- Click on Create and the Virtual Machine will be created.
+
+
 <img width="715" alt="4" src="https://github.com/user-attachments/assets/e7ed4775-824d-432e-b2a9-484dea9e8772">
 
 - The procedure for establishing the second virtual machine will closely resemble that of the first. However, there are key distinctions: this virtual machine will be designated as VM2, and it will utilize the image Ubuntu Server 24.04 LTS - x64 Gen 2. This configuration will represent our Linux virtual machine.
