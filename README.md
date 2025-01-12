@@ -289,44 +289,43 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 - The data in here will essentially be reversed the source and destination possibly being flipped and the IP address source becomes the destination and this keeps going on throughout all the pings
 
+![image](https://github.com/user-attachments/assets/cbfea7d6-bf8a-433d-889b-08a84fc1d039)
+<be><br>
+
+- Type in ping 10.0.0.5 -t will cause a non-stop ping 
 
 <br><br>
 <h3>Configuring a firewall to Block all incoming ping traffic </h3>
 
 - In this step, we are going to block all incoming ping traffic coming from the Windows Virtual Machine to the Linux Virtual Machine and then observe what happens afterward
 
-<img width="800" alt="14" src="https://github.com/user-attachments/assets/e567af13-3c65-4805-b9e9-e84d0804d353">
+![image](https://github.com/user-attachments/assets/900450d7-834b-4bc2-b030-84e7c88b79bb)
+
+<br><br>
+![image](https://github.com/user-attachments/assets/2e50c253-8426-49b8-92d4-11a87c831bc9)
 
 <br><br>
 
-<img width="218" alt="Screenshot 2024-11-07 at 1 02 57 PM" src="https://github.com/user-attachments/assets/5da89e34-d908-422b-bc18-fe9b61b7be6d">
+![image](https://github.com/user-attachments/assets/b7553ea9-1212-4c64-bee6-48df140ec388)
 <br><br>
 
-- Go ahead and jump straight into the Azure portal and search for Network Security Groups -> Click on your Linux VM -> Hit the Settings down arrow
-
-<br><br>
-
-
-<img width="689" alt="Screenshot 2024-11-07 at 1 09 32 PM" src="https://github.com/user-attachments/assets/12201d99-8a30-4b98-affd-23960dab78fd">
+- Go to the Azure portal and search for Network Security Groups, Click on your Linux-VM , Click on Settings
+- Click on inbound security rule.
 
 - This is the firewall for the Linux computer
 
 - For this step hit the drop-down arrow for settings and click on inbound security rules, with this we will create a rule for traffic coming inbound to the virtual machine
   <br><br>
-
-<img width="599" alt="Screenshot 2024-10-11 at 2 51 18 PM" src="https://github.com/user-attachments/assets/8a519d7d-4d5e-4ef1-a0bb-c9a7fdc39275">
-
-<br><br>
-
+  
 - Click on Add to begin the process of creating a rule
 <br><br>
 
-<img width="466" alt="Screenshot 2024-11-07 at 1 24 16 PM" src="https://github.com/user-attachments/assets/aa7c1b27-e80a-44db-99bf-606efc543f8d">
+![image](https://github.com/user-attachments/assets/7c566fe1-8661-4b0f-83d4-c02a503d626d)
+<br><br>
 
+- What I have inputted for this lab
 
-- What I have displayed is what you should put in
-
-- There is an asterisk (which is referred to as any) placed in the destination port since ICMP doesn’t use a port
+- There is an asterisk, which is referred to as any, placed in the destination port since ICMP doesn’t use a port
 
 - Deny is selected to prevent ICMP from being pinged so the firewall will drop the traffic
 
@@ -336,52 +335,34 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 <br>
 
-<img width="347" alt="17" src="https://github.com/user-attachments/assets/82a8711e-942f-4858-83f5-a593b031aa6e">
+![image](https://github.com/user-attachments/assets/5f6b9f88-ac33-4d50-b721-2e8d28c12077)
 
 
-- As you can see once the rule takes effect in Powershell everything will start to time out because the Linux virtual machine will begin to ignore the traffic and not reply to it
+- As you can see once the rule takes effect in Powershell everything will start to time out because the Linux virtual machine will begin to ignore the traffic and not reply to it.
 
-- The rule we made denies incoming ICMP traffic from any source to any destination for the Linux virtual machine 
+- The rule we made denies incoming ICMP traffic from any source to any destination for the Linux virtual machine.
 
-<br><br>
+- In Wireshark what also changed is that instead of getting a steady request/ reply response it changed to just request because no response was found and the firewall is blocking the replies.
 
-<img width="1119" alt="18" src="https://github.com/user-attachments/assets/cdf4f238-08e0-4a55-8ed5-681f3f56867c">
-
-- In Wireshark what also changed is that instead of getting a steady request/ reply response it changed to just request because no response was found and the firewall is blocking the replies
-
-- P.S. This can go on forever
+- This can go on forever.
   
-<br><br>
-
-<img width="457" alt="Screenshot 2024-11-07 at 1 34 38 PM" src="https://github.com/user-attachments/assets/a7f03bce-cf05-40ff-8a6f-80d9f8840225">
-
 
 <br><br>
 
-<img width="1439" alt="Screenshot 2024-11-07 at 1 30 48 PM" src="https://github.com/user-attachments/assets/b679a612-f828-4f14-8259-321edcd91f9f">
 
-<img width="1437" alt="Screenshot 2024-11-07 at 1 35 02 PM" src="https://github.com/user-attachments/assets/0b8f1d94-f108-4e44-9078-b94efcdb7ee6">
+![image](https://github.com/user-attachments/assets/26340cb5-5737-4f94-a0ca-aee710a4de90)
+<br><br>
+
+- We will be turning back on the Allow action for ICMP so that it can get a reply, to do that go back to Inbound security rules delete or edit the rule.
+    
+- Once the Azure resource manager picks up the requests then everything will flow back to normal like before we made that Deny (firewall) rule.
+
+- Stop the ping activity with Control + C before moving on to the next step.
 
 <br><br>
 
-- For this, we will be turning back on the Allow action for ICMP so that it can get a reply, to do that go back to Virtual Machines -> linux-vm -> Networking -> Network settings -> click on the highlighted Network security group -> Inbound security rules -> you can choose to delete or edit the rule
-  
-<br><br>
 
-<img width="782" alt="20" src="https://github.com/user-attachments/assets/7850a198-f879-4b1a-9b12-a6b9683439d0">
-
-
-<br>
-
-<img width="727" alt="21" src="https://github.com/user-attachments/assets/d94641cb-aea4-45b0-81d7-bf4afb35c8da">
-
-- Once the Azure resource manager picks up the requests then everything will flow back to normal like before we made that Deny (firewall) rule
-
-- Stop the ping activity with Control + C before moving on to the next step
-
-<br><br>
-
-<h3>&#9319; Observe SSH traffic </h3>
+<h3>Observe SSH traffic </h3>
 
 <img width="1060" alt="22" src="https://github.com/user-attachments/assets/4c1357e8-9119-4725-865e-f082e03ca728">
 
