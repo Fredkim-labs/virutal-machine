@@ -1,7 +1,7 @@
 
 ![6320f4525eab744205bc21b6_Microsoft-Azure-Logo](https://github.com/user-attachments/assets/9cd1e085-8a21-48c1-bab9-07e21fd18ded)
 
-<h1> Creating Virtual Networks and Virtual Machines </h1>
+<h1> Creating Virtual Machines and Virtual Network </h1>
 
 
 This tutorial provides a comprehensive guide to creating resource groups for virtual machines. We will be using Azure Virtual Machine and Windows Remote Desktop. Finally, we’ll perform various network-related tasks using the virtual machines, giving you hands-on experience managing and configuring network activities.
@@ -14,7 +14,6 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 <h2>Operating Systems Used </h2>
 
-- Windows Server 2022
 - Windows 10 Pro (22H2)
 - Linux, Ubuntu Server 24.04 LTS - x64 Gen 2. 
 
