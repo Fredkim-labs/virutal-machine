@@ -33,7 +33,7 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 - I used RG-Network for my Resource Group. For the region, I selected East US 2, as I am located on the East Coast.
   <br><br>
 
-<h3>Create The Virtual Machine With The Virtual Network</h3>
+<h3>Create The Windows Virtual Machine With The Virtual Network</h3>
 
 
 - Here is the created resource group
@@ -93,74 +93,87 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 - Click on Create and the Virtual Machine will be created.
 
-
-<img width="715" alt="4" src="https://github.com/user-attachments/assets/e7ed4775-824d-432e-b2a9-484dea9e8772">
-
-- The procedure for establishing the second virtual machine will closely resemble that of the first. However, there are key distinctions: this virtual machine will be designated as VM2, and it will utilize the image Ubuntu Server 24.04 LTS - x64 Gen 2. This configuration will represent our Linux virtual machine.
-
-  <br>
-
-  <img width="622" alt="Screenshot 2024-10-27 at 3 11 23 PM" src="https://github.com/user-attachments/assets/905af917-cc4f-4e63-ae03-9576d04e81a8">
-
-  
-- Please ensure that you select "password" as the Authentication type. Additionally, create a username and password that you will easily remember. It is advisable to document this information for future reference.
-  
-<br><br>
-<img width="1463" alt="Screenshot 2024-07-03 at 5 22 18 PM" src="https://github.com/user-attachments/assets/5c5d9dd3-078f-4c3e-bcad-cb041535cda2">
-
-- Here are the 2 Virtual Machines that we will be using 
-
-<br><br>
-<img width="1354" alt="Screenshot 2024-07-04 at 10 24 18 AM" src="https://github.com/user-attachments/assets/2500969d-7cbe-4c94-922c-50ffc8afd371">
-
-- This is an overview of what everything looks like in the resource group with the 2 virtual machines plus their respective Network Security Groups, Virtual Networks, Disks, and Public IP Addresses 
-
-<h2>Using Remote Desktop With MacOS</h2>
+<h3>Create The Linux Server Virtual Machine</h3>
 
 <br>
 
-- First, make sure both VMs are on the same virtual network
-  
-- If they are then your ready for the next step if not make sure to wait for VM1 to finish and set up creating its virtual network before you start creating VM2
-<br>
-<img width="429" alt="5 (A)" src="https://github.com/user-attachments/assets/aaf609fe-9ffe-481c-b1b0-9a4ae31e8e71">
+![image](https://github.com/user-attachments/assets/1835a4c7-acc7-405b-97bc-4211f4376c2b)
+<br><br>
+
+- Create another Virtual Machine.
+- Selected RG-Network for Resource Group.
+- Region - East US 2
+- Choose Unbuntu Server 24.22
 <br>
 
-<img width="509" alt="11 (A)" src="https://github.com/user-attachments/assets/0776060c-b0ab-4157-97bf-06a71e51233e"> <br>
+![image](https://github.com/user-attachments/assets/8d5bab90-883e-4f9d-8543-d7d514849bda)
+<br><br>
+
+- Choose 2vcpu option
+- Click on Password for Authentication type.
+- Create a password.
+
+<br>
+
+![image](https://github.com/user-attachments/assets/c59c1db5-6327-47ab-af96-9fb067e84cc2)
+<br><br>
+
+- Under the "Networking" tabs. Select Lab-Vnet for Virtual Network.
+- Click Review + Create, and a New Virtual Machine will be created.
+  
+<br>
+
 
 <br><br>
 
-<h3>&#9314; Download Microsoft Remote Desktop </h3>
-<br>
-<img width="287" alt="Screenshot 2024-09-19 at 12 28 36 PM" src="https://github.com/user-attachments/assets/fc0b9142-ae88-4315-9a78-b2649a841455">
-
-- Go to the App Store on Mac and download this app. We are going to use remote desktop to connect to our Windows 10 virtual machine
-<img width="470" alt="5" src="https://github.com/user-attachments/assets/fb9e38e9-3347-410a-ab8c-680c626ababe">
-
-- We are going to need to get the Windows 10 virtual IP address
-
-- Scroll to the right and copy the public IP address
-  
-- Under the PC name put the public IP address, friendly name anything you want, or Windows VM to differentiate, then click add
-  
-- Remember your username and password from before, put that in when clicking to connect to the virtual machine
-
-  
+![image](https://github.com/user-attachments/assets/38cf8d3a-fb28-4c31-ac67-f94d5d599445)
 <br><br>
 
-<img width="783" alt="Screenshot 2024-10-27 at 3 36 21 PM" src="https://github.com/user-attachments/assets/dc85a02c-20d6-4d5d-a668-0dac622c2645">
+- Here are the 2 Virtual Machines.
+  
+<br><br>
+![image](https://github.com/user-attachments/assets/8271269c-5cdb-46f9-939e-7329d53c9c04)
+<br>>br>
 
 - If you are confident that you have entered all the information accurately, yet you are still unable to establish a remote desktop connection to the virtual machine, the issue may be related to the password.
 
 - To reset your password, please access the Azure portal. Select your Windows virtual machine, navigate to the "Help" section, and click on "Reset password." Enter your new password and then select "Update." This process should effectively resolve the issue.
 
-<br><br>
-<img width="1680" alt="6" src="https://github.com/user-attachments/assets/1877ce8d-8a4a-49a0-b483-ca827787f8b0">
+<br>
 
+<h3>Accessing Virtual Machines Through Windows Remote Desktop</h3>
+
+![image](https://github.com/user-attachments/assets/06db41ea-506b-49d9-9a51-4f5630c99c14)
+<br><br>
+
+- In the Azure portal Copy the Windows-VM public IP address.
 
 <br>
 
-- Here is the Virtual Machine which is Windows 10
+![image](https://github.com/user-attachments/assets/b2c68eae-3e05-4498-a73a-32ac4bce4152)
+<br><br>
+
+-Click the start window and search for Remote Desktop. Open Remote Desktop Communications.
+
+<br>
+
+![image](https://github.com/user-attachments/assets/e3c82e14-432c-41f0-b6ba-4dd4be9e3905)
+
+![image](https://github.com/user-attachments/assets/7253116c-32ec-446e-9481-8252cf598f29)
+
+<br><br>
+
+- Paste the IP address in the Remote Desktop and click connect.
+- Type in Username and password.
+
+<br>
+
+![image](https://github.com/user-attachments/assets/2a7c11af-2b05-47ae-9904-8677d350783f)
+
+
+<br><br>
+
+- Here is the Virtual Machine in Windows 10
   
 <br><br>
 
