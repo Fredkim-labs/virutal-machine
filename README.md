@@ -364,124 +364,99 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 <h3>Observe SSH traffic </h3>
 
-<img width="1060" alt="22" src="https://github.com/user-attachments/assets/4c1357e8-9119-4725-865e-f082e03ca728">
+![image](https://github.com/user-attachments/assets/cecd937a-b4f9-49d5-b215-02677bb2a3a1)
+
 
 - SSH (Secure Shell) is used to make a secure connection from 1 computer to another computer, it uses TCP port 22
 
 - In Wireshark, we are going to type in SSH to filter for that traffic
 
-- Go to your Linux VM and copy the private IP address located in Overview -> Properties 
+- Find your Linux-VM Private IP address. 
 
-- go back to your Windows VM and Open Windows Powershell, type in ssh labuser@10.0.0.5, and press enter to connect to the Linux VM with SSH, confirm a yes again to continue connecting
+- In Windows Powershell, type in ssh labuser@10.0.0.5, and press enter to connect to the Linux VM with SSH, confirm yes to continue connecting
 
 - Finally enter the password you made for labuser
   
-<br><br>
-
-<img width="639" alt="23" src="https://github.com/user-attachments/assets/abef1814-17fd-4e1b-9f5e-c637cc6ed52a">
-
-
 - The prompt looks different now because we are connected to the Linux machine
 
 
 <br><br>
 
-<img width="607" alt="24" src="https://github.com/user-attachments/assets/41e6663f-0a91-4104-92f4-737a257abb67">
+![image](https://github.com/user-attachments/assets/9b6fb5ad-ec83-446e-ad8a-87cfd038c549)
 
-- Type id this is our user id labuser
+- Type id For user id - LabUser
 
-- Type hostname mine is Linux VM2
+- Type hostname - Linux-VM
 
-- Type uname -a this will give out stuff about the operating system
+- Type uname -a - this will give out stuff about the operating system
 
-- Type pwd shows the labuser file path
+- Type pwd - shows the Labuser file path
 
-- Type touch file.txt this creates a file on the Linux machine
+- Type touch file.txt - creates a file on the Linux machine
 
 - Type ls shows that the file was created
 
 <br><br>
 
-<img width="1114" alt="28" src="https://github.com/user-attachments/assets/9dda896b-60a9-4bcb-8d56-b88ae75335d9">
+![image](https://github.com/user-attachments/assets/7b43c51d-3899-4cc4-9f18-4f71deecf4b9)
 
-- Instead of SSH In Wireshark type in tcp.port==22 this will filter out all of the traffic that uses TCP port 22 
+- Wireshark type in tcp.port==22 this will filter out all of the traffic that uses TCP port 22 
   
 - Type in PowerShell ls and press enter because SSH uses TCP port 22 we can see in Wireshark it is being filtered out 
 <br><br>
 
-<img width="236" alt="26" src="https://github.com/user-attachments/assets/c38cb7e6-761a-40fd-a25b-9ba52c6b0bf0">
+![image](https://github.com/user-attachments/assets/aeb8d2e9-8f03-4a81-bda5-57c36b5a6cd6)
 
-- Type in Powershell exit this will drop the connection and log us out
+- Type exit in Powershell and this will drop the connection and log us out
   
-- Type in hostname to verify which VM you are back in
+- Type hostname to verify which VM you are back in
   
 <br><br>
 
-<h3>&#9320; Observe DHCP traffic </h3>
+<h3>Observe DHCP traffic </h3>
 
 
-<img width="934" alt="30" src="https://github.com/user-attachments/assets/bb7359ca-ae43-4fbf-8594-47413b23cb72">
+![image](https://github.com/user-attachments/assets/9c844d0d-a210-4085-b27e-e95f8dfc5cb1)
 
 - In Wireshark, we are going to filter for DHCP traffic only
 
 - DHCP uses ports 67 and 68 this protocol is used for the computer to assign itself an IP address to devices when they are first connected to the network
 
-- Clear out what is in the filter and type in DHCP at the top of Wireshark you will not see any traffic running 
-
 - Open Powershell as an administrator and type in ipconfig /renew then hit enter, if the discover packet did not show up then you have to filter out more
 
 <br><br>
-<img width="127" alt="Screenshot 2024-10-27 at 5 45 50 PM" src="https://github.com/user-attachments/assets/06a1c269-90f1-48d3-b47f-6bcbedb10dbf">
-<br>
 
-
-<img width="203" alt="Screenshot 2024-10-27 at 5 46 38 PM" src="https://github.com/user-attachments/assets/cb8f1f65-4057-419f-95d9-f5621ceb67dc">
-
-<br>
-
-<img width="121" alt="Screenshot 2024-10-27 at 5 47 27 PM" src="https://github.com/user-attachments/assets/3d0ddf6a-0dd0-4b48-a720-0e6819b60964">
-
-<br>
-
-<img width="210" alt="Screenshot 2024-10-27 at 5 47 57 PM" src="https://github.com/user-attachments/assets/6f1c8761-41f4-484b-8612-8f6221d91463">
+![image](https://github.com/user-attachments/assets/a1f9c659-123f-4674-a707-4ced2cab9eb2)
 <br><br>
 
 - We will begin running a script
    
-- Open Notepad and type in ipconfig /release underneath that ipconfig /renew
+- Open Notepad and type in ipconfig /release and ipconfig /renew
 
-- Save what we typed out file -> save
-
-- When the Save As options show up at the top type in c:\programdata
+- Save the notepad file in c:\programdata
 
 - Save the file name as dhcp.bat
 
 - We will run this in Powershell to have it release all the IP addresses and then it should renew automatically coming back up after killing the network connection 
 <br><br>
 
-<img width="544" alt="Screenshot 2024-11-07 at 2 12 52 PM" src="https://github.com/user-attachments/assets/a39cfb36-aedc-4091-8ea8-f138d7bf237d">
+![image](https://github.com/user-attachments/assets/98cbdcd3-d485-4f48-80d3-50b8ceef5c71)
 
+<be><br>
 
 - Type in Powershell cd c:\programdata to be inside the programdata
-
-<br><br>
-
-  <img width="533" alt="Screenshot 2024-11-07 at 2 13 10 PM" src="https://github.com/user-attachments/assets/9945f15d-973a-40ab-84ca-94fac1c8605c">
-
 
 - Type ls for list and you can see dhcp.bat is in the program data that we saved
 
   <br><br>
   
-<img width="650" alt="Screenshot 2024-11-07 at 2 14 36 PM" src="https://github.com/user-attachments/assets/b360088f-e9b4-4076-8b44-d38b533c0d44">
+![image](https://github.com/user-attachments/assets/5765d20a-a6ef-469e-90b1-b8e7a785906a)
 
-- To run dhcp you will first clear out the data in Wireshark then head back into Powershell and type in .\dhcp.bat and press enter
+- To run the script, first clear out the data in Wireshark then head back into Powershell and type in .\dhcp.bat and press enter
 
-<br><br>
+- The connection will die after you hit enter
 
-<img width="1015" alt="Screenshot 2024-11-07 at 2 15 41 PM" src="https://github.com/user-attachments/assets/eae60aa4-cfd2-4038-a86b-80db2b535a1b">
-
-- The connection will die after you hit enter because Ipconfig \release happened but then automatically ipconfig \renew will kick in and restore the connection
+- Ipconfig \release happened but then automatically ipconfig \renew kicked in and restored the connection
 
 - This is the DHCP traffic that was captured in Wireshark
 
@@ -489,26 +464,17 @@ This tutorial provides a comprehensive guide to creating resource groups for vir
 
 - After the release script command of DHCP was executing the script executed ipconfig /renew making it no need to type that out cause there is no network connection anymore but the command still ran
 
-- Discover happened with that occurring along with the other packets and so the source became zero because the IP address was released and the connection was dropped with the destination address as 255.255.255.255 a.k.a broadcast
+- See what happened with that occurring along with the other packets. The source became zero because the IP address was released and the connection was dropped with the destination address as 255.255.255.255
 
 - The DHCP server broadcasted back to my computer with a DHCP Offer request and then my computer sent a DHCP request packet to the DHCP server
 
-- Finally, the DHCP server acknowledged the requests from them to my computer, and then an acknowledge request was sent which had my computer now acquire a new IP address 
-
-
-<br><br>
-
-
-
-<img width="644" alt="Screenshot 2024-11-07 at 2 16 50 PM" src="https://github.com/user-attachments/assets/ac6e3034-97da-4306-9133-ee6e5508fac4">
-
-- This address was released and then re-requested by the computer
+- Finally, the DHCP server acknowledged the requests from them to my computer, and then an acknowledge request was sent and my computer now acquired a new IP address 
 
   
 <br><br>
 
 
-<h3>&#9321; Observe DNS traffic </h3>
+<h3>Observe DNS traffic </h3>
 
 <img width="1120" alt="31" src="https://github.com/user-attachments/assets/08659088-37f5-4340-a534-b810ef861dd2">
 
