@@ -4,7 +4,9 @@
 <h1> Creating Virtual Machines and Virtual Network </h1>
 
 
-This tutorial provides a comprehensive guide to creating resource groups for virtual machines. We will be using Azure Virtual Machine and Windows Remote Desktop. Finally, we’ll perform various network-related tasks using the virtual machines, giving you hands-on experience managing and configuring network activities.
+This is a guide for creating Virtual Machines and Virtual Networks. We will be using Azure Virtual Machine and Windows Remote Desktop. 
+We will perform network-related tasks using the virtual machines. 
+This will give us hands-on experience managing and configuring network activities.
 
 <h2>Technologies Used</h2>
 
