@@ -58,7 +58,7 @@ This will give us hands-on experience managing and configuring network activitie
   
 - Select Size - You want at least 2 vcpus or the Virtual Machine will run slow in Azure
 
-- Create a password and username and then record them down for safekeeping.
+- Create a password and username and then record them for safekeeping.
 
   
 <br><br>
@@ -81,7 +81,7 @@ This will give us hands-on experience managing and configuring network activitie
 
 <br><br>
 
-- I have named it to Lab-Vnet. Please confirm by pressing OK, and this will be the new name for the virtual network.
+- I have named it to Lab-Vnet. Please confirm by pressing OK. This will be the new name for the virtual network.
   
 <br><br>
 
@@ -136,7 +136,7 @@ This will give us hands-on experience managing and configuring network activitie
 ![image](https://github.com/user-attachments/assets/8271269c-5cdb-46f9-939e-7329d53c9c04)
 <br>>br>
 
-- If you are confident that you have entered all the information accurately, yet you are still unable to establish a remote desktop connection to the virtual machine, the issue may be related to the password.
+- If you are confident that you have entered all the information correctly, yet you cannot establish a remote desktop connection to the virtual machine, the issue may be related to the password.
 
 - To reset your password, please access the Azure portal. Select your Windows virtual machine, navigate to the "Help" section, and click on "Reset password." Enter your new password and then select "Update." This process should effectively resolve the issue.
 
@@ -164,7 +164,7 @@ This will give us hands-on experience managing and configuring network activitie
 
 <br><br>
 
-- Paste the IP address in the Remote Desktop and click connect.
+- Paste the IP address in "Remote Desktop" and click connect.
 - Type in Username and password.
 
 <br>
@@ -188,7 +188,7 @@ This will give us hands-on experience managing and configuring network activitie
 - Download Wireshark on this virtual machine, here is the link https://www.wireshark.org
 
 - Download Windowsx64 Installer.
-- When it is done downloading open the file and go through the procedure for installing the software which we will mostly say yes and agree
+- Download and open the file and go through the installation process.
 
 - Wireshark is a protocol analyzer that lets us do traffic examination and observe traffic between the 2 virtual machines.
 <be>
@@ -249,7 +249,7 @@ This will give us hands-on experience managing and configuring network activitie
 
 - Press the green shark fin under Edit in Wireshark called "Restart Current Capture" then press continue without saving.
 
-- Redo ping again in Powershell, you may see just 4 events happen in there for example reply, reply, reply but in Wireshark you see 8 events. That is because it captured both the request from the Windows computer, source - 10.0.0.4, and captured the reply from the Destination - 10.0.0.5, Linux computer, another request from the Windows computer and reply from the Linux Computer.
+- Ping again in Powershell, and you will see just 4 events that happened, for example, reply, reply, reply but in Wireshark, you see 8 events. That is because it captured both the request from the Windows computer, source - 10.0.0.4, and the reply from the Destination - 10.0.0.5, Linux computer, another request from the Windows computer, and a reply from the Linux Computer.
 
 
 <br><br>
@@ -310,7 +310,7 @@ This will give us hands-on experience managing and configuring network activitie
 ![image](https://github.com/user-attachments/assets/b7553ea9-1212-4c64-bee6-48df140ec388)
 <br><br>
 
-- Go to the Azure portal and search for Network Security Groups, Click on your Linux-VM , Click on Settings
+- Go to the Azure portal and search for Network Security Groups, Click on your Linux VM, Click on Settings
 - Click on inbound security rule.
 
 - This is the firewall for the Linux computer
@@ -341,9 +341,9 @@ This will give us hands-on experience managing and configuring network activitie
 
 - As you can see once the rule takes effect in Powershell everything will start to time out because the Linux virtual machine will begin to ignore the traffic and not reply to it.
 
-- The rule we made denies incoming ICMP traffic from any source to any destination for the Linux virtual machine.
+- This rule denies incoming ICMP traffic from any source to any destination for the Linux virtual machine.
 
-- In Wireshark what also changed is that instead of getting a steady request/ reply response it changed to just request because no response was found and the firewall is blocking the replies.
+- In Wireshark what also changed is that instead of getting a steady request/ reply response it changed to "request" because no response was found and the firewall is blocking the replies.
 
 - This can go on forever.
   
